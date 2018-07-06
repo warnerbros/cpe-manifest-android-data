@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.3'
+
+	}
+}
+
+
+//apply plugin: 'android'
+apply plugin: 'com.android.library'
+android {
+	compileSdkVersion 23
+	buildToolsVersion "23.0.2"
+	useLibrary 'org.apache.http.legacy'
+
+	defaultConfig {
+		minSdkVersion 18
+		targetSdkVersion 21
+    }
+        
+	sourceSets {
+		main {
+			manifest.srcFile 'CPEAndroidData.xml'
+			java.srcDirs = ['src']
+			resources.srcDirs = ['src']
+			aidl.srcDirs = ['src']
+			renderscript.srcDirs = ['src']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+			jni.srcDirs = []		//disable automatic ndk-build call
+		}
+
+
+		androidTest.setRoot('test')
+	}
+	
+	lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+	mavenCentral()
+    jcenter()
+}
+
+dependencies {
+	compile fileTree(dir: 'kit-libs', include: '**/*.jar')
+	compile 'com.squareup.okhttp:okhttp:2.2.0'
+	compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+	compile 'com.google.code.gson:gson:2.4'
+	compile 'com.google.android.gms:play-services:9.4.0'
+}
+

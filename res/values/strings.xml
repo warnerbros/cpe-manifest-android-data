@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Next Gen</string>
+
+	<!-- production key -->
+	<string name="google_maps_key">01ArUv7t4d2JL6vK6MzLGrLkeF9hoTcsanAqWKQ</string>
+
+	<!--
+         Jason's debug key
+		<string name="google_maps_key">0udlMGxJ4Z_ifjMAOQdOeCUXHNjipGVrksXnv9g</string>
+		<string name="google_maps_key">0udlMGxJ4Z_jdmxRev14r5YgC3kPoLGGWHEcwUA</string>
+		<string name="google_maps_key">0udlMGxJ4Z_jlHEzpd8k4Jd-NTuvTN_r7xP3duA</string>
+	-->
+	<string name="biography">BIOGRAPHY</string>
+	<string name="filmography">FILMOGRAPHY</string>
+	<string name="actor_gallery">ACTOR GALLERY</string>
+	<string name="label_ok">OK</string>
+	<string name="label_cancel">Cancel</string>
+	<string name="label_yes">Yes</string>
+	<string name="label_no">No</string>
+	<string name="label_all">All</string>
+	<string name="label_submit">Submit</string>
+	<string name="dialog_leave_app">Leaving App</string>
+	<string name="dialog_follow_link">Following this link will exit the app and launch your browser. Would you like to continue?</string>
+
+	<string name="settings_captions_header">Closed Captions</string>
+
+	<!-- Drawer -->
+	<string name="drawer_open">Open Drawer</string>
+	<string name="drawer_close">Close Drawer</string>
+
+	<string name="today">Today</string>
+
+	<string name="back_button_text">Back</string>
+	<string name="home_button_text">Home</string>
+	<string name="actor">ACTOR</string>
+	<string name="actors">ACTORS</string>
+
+
+	<string name="loading">Loading</string>
+	<string name="audio_settings">Audio Settings</string>
+	<string name="subtitles">Subtitles</string>
+	<string name="menu">Menu</string>
+
+	<string name="shop_at_the_take">SHOP ON THE TAKE.COM</string>
+	<string name="shop_online">SHOP NOW</string>
+	<string name="send_the_link">SEND THE LINK</string>
+	<string name="share_this_clip">SHARE THIS CLIP</string>
+	<string name="share_this_image">SHARE THIS IMAGE</string>
+
+	<string name="leave_app_dialogbox_title">Leaving App</string>
+	<string name="leave_app_dialogbox_text">Following this link will exit the app and launch your browser. Would you like to continue?</string>
+	<string name="description">sth</string>
+
+	<string name="location_full_map">Location: Full Map</string>
+	<string name="map_string">Map</string>
+	<string name="satellite_string">Satellite</string>
+	<string name="locations_count_text">%s locations</string>
+	<string name="count_down_text">%s\nsec</string>
+	<string name="show_more_text">Show More</string>
+	<string name="show_less_text">Show Less</string>
+
+	<string name="watched">WATCHED</string>
+	<string name="playing">PLAYING</string>
+	<string name="skip_this">Skip this</string>
+
+	<string name="choose_share_clip">CHOOSE A CLIP TO SHARE</string>
+
+	<string name="exact_match">Exact Match</string>
+	<string name="close_match">Close Match</string>
+	<string name="powered_by">POWERED BY</string>
+	<string name="thetake_bottom_text">NO ENDORSEMENT OR SPONSORSHIP IMPLIED BY ANY ACTOR, STUDIO OR BRAND FEATURED ON THETAKE.COM</string>
+
+	<string name="play_movie">Play Movie</string>
+	<string name="extras">Extras</string>
+	<string name="nge_exit">Exit</string>
+	<string name="nge_commentary">Commentary</string>
+	<string name="nge_commentary_on">Commentary On</string>
+	<string name="off_text">Off</string>
+	<string name="on_text">On</string>
+	<string name="director_commentary">Director Commentary</string>
+
+	<string name="playing_on_str">Casting to %s</string>
+	<string name="loading_on_str">Loading on %s</string>
+	<string name="subtitle_off">OFF</string>
+
+	<string name="share_clip_text">Check out this clip from %s: </string>
+	<string name="share_image_text">Check out this image from %s: </string>
+
+	<string name="share_clip_sub_text">Share this clip with friends!</string>
+</resources>
