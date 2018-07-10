@@ -1,5 +1,7 @@
 # CPEData
-Android native object mapping for MovieLabs Cross-Platform Extras Manifest, Common Metadata, AppData and Style specs, compatible with [CPEExperience](https://github.com/warnerbros/cpe-manifest-android-experience) for a full UI implementation.
+Android native object mapping for MovieLabs Cross-Platform Extras Manifest, Common Metadata, AppData and Style specs.
+Compatible with [NextGenExperience](https://github.com/warnerbros/cpe-manifest-android-experience) branch "feature/separating-parser" for a full UI implementation.
+P.S. "feature/separating-parser" is WIP, it will be merged into master when its completely done.
 
 ## Workspace ##
 1. Download Android Studio
