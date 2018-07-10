@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 		loadButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				ManifestItem manifestItem = new ManifestItem("cid", null, manifestEditText.getText().toString(), appDataEditText.getText().toString(), cpeStyleEditText.getText().toString());
+				ManifestItem manifestItem = new ManifestItem(manifestEditText.getText().toString(), appDataEditText.getText().toString(), cpeStyleEditText.getText().toString());
 				movieMetaData = CPEDataParser.parseCPEManifests(MainActivity.this, manifestItem, Locale.US);
 				Intent intent = new Intent(MainActivity.this, ManifestViewerActivity.class);
 				MainActivity.this.startActivity(intent);
