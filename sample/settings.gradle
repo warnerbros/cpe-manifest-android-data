@@ -1,0 +1,2 @@
+include ':app', ':cpe-manifest-android-data'
+project(":cpe-manifest-android-data").projectDir = file("../../cpe-manifest-android-data")

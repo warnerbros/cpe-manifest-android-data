@@ -33,9 +33,9 @@ public class CastData extends PresentationDataItem {
 		super(null, null, null, locale);
 		if (castInfo != null && castInfo.getIdentifier() != null && castInfo.getIdentifier().size() > 0){
 			for (PersonIdentifierType identifierType : castInfo.getIdentifier()){
-				if (MovieMetaData.OTHER_PEOPLE_ID.equals(identifierType.getNamespace())){
+				if (CPEData.OTHER_PEOPLE_ID.equals(identifierType.getNamespace())){
 					id = identifierType.getIdentifier();
-				} else if (MovieMetaData.OTHER_APP_DATA_ID.equals(identifierType.getNamespace())){
+				} else if (CPEData.OTHER_APP_DATA_ID.equals(identifierType.getNamespace())){
 					appDataId = identifierType.getIdentifier();
 				}
 			}
@@ -82,9 +82,9 @@ public class CastData extends PresentationDataItem {
 
 		if (castInfo!= null && castInfo.getIdentifier() != null){
 			for (PersonIdentifierType personId : castInfo.getIdentifier()) {
-				if (MovieMetaData.BASELINE_NAMESPACE.equals(personId.getNamespace()) ) {
+				if (CPEData.BASELINE_NAMESPACE.equals(personId.getNamespace()) ) {
 					baselineApiActorId = personId.getIdentifier();
-				} else if (MovieMetaData.OTHER_PEOPLE_ID.equals(personId.getNamespace())){
+				} else if (CPEData.OTHER_PEOPLE_ID.equals(personId.getNamespace())){
 					peopleOtherId = personId.getIdentifier();
 				}
 			}

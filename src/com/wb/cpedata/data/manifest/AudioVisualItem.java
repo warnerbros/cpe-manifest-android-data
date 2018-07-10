@@ -131,11 +131,11 @@ public class AudioVisualItem extends PresentationDataItem {
 	}
 
 	public boolean isShareClip() {
-		if (MovieMetaData.SHARE_CLIP_SUBTYPE.equalsIgnoreCase(subtype))
+		if (CPEData.SHARE_CLIP_SUBTYPE.equalsIgnoreCase(subtype))
 			return true;	// man of steel
 		else {
 			// travel up the parent to see if it's a sharable clip
-			ExperienceData exp = CPEDataParser.getMovieMetaData().findExperienceDataById(parentExperienceId);
+			ExperienceData exp = CPEDataParser.getCPEData().findExperienceDataById(parentExperienceId);
 			do {
 				if (exp.isShareClip())
 					return true;

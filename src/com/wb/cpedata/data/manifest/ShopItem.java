@@ -4,7 +4,6 @@ package com.wb.cpedata.data.manifest;
 import android.content.Context;
 
 import com.wb.cpedata.R;
-import com.wb.cpedata.parser.LocalizableMetaDataInterface;
 import com.wb.cpedata.parser.appdata.AppDataType;
 import com.wb.cpedata.parser.appdata.AppNVPairType;
 import com.wb.cpedata.parser.manifest.schema.v1_4.InventoryMetadataType;
@@ -15,7 +14,6 @@ import com.wb.cpedata.util.utils.StringHelper;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.StringTokenizer;
 
@@ -80,17 +78,17 @@ public class ShopItem extends PresentationDataItem implements ShopItemInterface,
 
 		if (appDataType != null && appDataType.getNVPair() != null && appDataType.getNVPair().size() > 0){
 			for (AppNVPairType pair : appDataType.getNVPair()){
-				if (pair.getName().equalsIgnoreCase(MovieMetaData.ITEM_CONTENT_ID))
+				if (pair.getName().equalsIgnoreCase(CPEData.ITEM_CONTENT_ID))
 					cid = pair.getContentID();
-				else if (pair.getName().equalsIgnoreCase(MovieMetaData.ITEM_DISPLAY_ORDER))
+				else if (pair.getName().equalsIgnoreCase(CPEData.ITEM_DISPLAY_ORDER))
 					order = pair.getInteger().intValue();
-				else if (pair.getName().endsWith(MovieMetaData.ITEM_EXTERNAL_URL))
+				else if (pair.getName().endsWith(CPEData.ITEM_EXTERNAL_URL))
 					url = pair.getURL();
-				else if (pair.getName().equalsIgnoreCase(MovieMetaData.ITEM_PRODUCT_VIDEO)) {
+				else if (pair.getName().equalsIgnoreCase(CPEData.ITEM_PRODUCT_VIDEO)) {
 					videoPresentationId = pair.getPresentationID();
-				}else if (pair.getName().equalsIgnoreCase(MovieMetaData.ITEM_PRODUCT_VIDEO_CID))
+				}else if (pair.getName().equalsIgnoreCase(CPEData.ITEM_PRODUCT_VIDEO_CID))
 					videoContentId = pair.getContentID();
-				else if (pair.getName().endsWith(MovieMetaData.ITEM_PARENT_CID)) {
+				else if (pair.getName().endsWith(CPEData.ITEM_PARENT_CID)) {
 					parentContentId = pair.getContentID();
 					categoryType = metadataTypeHashMap.get(parentContentId);
 				}
@@ -103,7 +101,7 @@ public class ShopItem extends PresentationDataItem implements ShopItemInterface,
 			BasicMetadataType basicMetadata = metadata.getBasicMetadata();
 			if (basicMetadata != null){
 				if (basicMetadata.getLocalizedInfo() != null && basicMetadata.getLocalizedInfo().size() > 0){
-					BasicMetadataInfoType localizedInfo = MovieMetaData.getMatchingLocalizableObject(basicMetadata.getLocalizedInfo(), locale);
+					BasicMetadataInfoType localizedInfo = CPEData.getMatchingLocalizableObject(basicMetadata.getLocalizedInfo(), locale);
 					titleDisplayUnlimited = localizedInfo.getTitleDisplayUnlimited();
 					titleSort = localizedInfo.getTitleSort();
 					posterUrl = localizedInfo.getArtReference().size() > 0 ? localizedInfo.getArtReference().get(0).getValue() : "";

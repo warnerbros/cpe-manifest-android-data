@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.wb.cpedata.CPEDataParser;
-import com.wb.cpedata.data.manifest.MovieMetaData;
+import com.wb.cpedata.data.manifest.CPEData;
 import com.wb.cpedata.data.manifest.ShopItemInterface;
 import com.wb.cpedata.data.theTake.ShopCategory;
 import com.wb.cpedata.data.theTake.TheTakeProductDetail;
@@ -60,7 +60,7 @@ public class TheTakeApiDAO {
     private static final List<ShopCategory> categories = new ArrayList<ShopCategory>();
 
     public static void init(){
-        theTakeMediaId = CPEDataParser.getMovieMetaData().getIdentifierForExternalAPI(MovieMetaData.THE_TAKE_MANIFEST_IDENTIFIER);
+        theTakeMediaId = CPEDataParser.getCPEData().getIdentifierForExternalAPI(CPEData.THE_TAKE_MANIFEST_IDENTIFIER);
         if (StringHelper.isEmpty(theTakeAPIKey)) {
             AssetManager am = CPEDataParser.getApplicationContext().getAssets();
             StringBuilder sb = new StringBuilder();

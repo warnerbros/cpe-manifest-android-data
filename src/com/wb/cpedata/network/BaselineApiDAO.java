@@ -142,16 +142,20 @@ public class BaselineApiDAO {
 
                         Gson gson = new GsonBuilder().create();
 
-                        List<CastHeadShot> headShots = gson.fromJson(talentImageResult, listType);
+                        try {
+                            List<CastHeadShot> headShots = gson.fromJson(talentImageResult, listType);
 
-                        if (castData.getBaselineCastData() == null) {
-                            castData.baselineCastData = new BaselineCastData();
-                        }
-                        castData.baselineCastData.headShots = headShots;
-                        for (ResultListener<Boolean> listener : actorsImagesListener){
-                            listener.onResult(true);
-                        }
+                            if (castData.getBaselineCastData() == null) {
+                                castData.baselineCastData = new BaselineCastData();
+                            }
+                            castData.baselineCastData.headShots = headShots;
+                            for (ResultListener<Boolean> listener : actorsImagesListener) {
+                                listener.onResult(true);
+                            }
 
+                        } catch (Exception ex) {
+
+                        }
                     }
 
 

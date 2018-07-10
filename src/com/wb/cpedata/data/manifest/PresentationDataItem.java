@@ -18,7 +18,7 @@ public abstract class PresentationDataItem {
 		if (metaData != null && metaData.getBasicMetadata().getLocalizedInfo() != null && metaData.getBasicMetadata().getLocalizedInfo().size() > 0) {
 
 
-			localizedInfo = MovieMetaData.getMatchingLocalizableObject(metaData.getBasicMetadata().getLocalizedInfo(), locale);
+			localizedInfo = CPEData.getMatchingLocalizableObject(metaData.getBasicMetadata().getLocalizedInfo(), locale);
 
 
 			if (localizedInfo == null)

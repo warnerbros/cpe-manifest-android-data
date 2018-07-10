@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:orientation="vertical"
+    android:background="@color/background_gray"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:text="Manifest XML:"
+        android:textColor="@android:color/black"
+        android:textSize="8pt"
+        android:layout_marginTop="@dimen/std_padding"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+    />
+
+    <EditText
+        android:id="@+id/manifest_xml_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+        android:background="@android:color/white"
+        android:maxLines="1"
+        android:inputType="text"
+        android:text=""
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:text="AppData XML:"
+        android:textColor="@android:color/black"
+        android:textSize="8pt"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+    />
+
+    <EditText
+        android:id="@+id/appdata_xml_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+        android:background="@android:color/white"
+        android:maxLines="1"
+        android:inputType="text"
+        android:text=""
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:text="CPEStyle XML:"
+        android:textColor="@android:color/black"
+        android:textSize="8pt"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+    />
+
+    <EditText
+        android:id="@+id/cpestyle_xml_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+        android:background="@android:color/white"
+        android:maxLines="1"
+        android:inputType="text"
+        android:text=""
+    />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textBox_height"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_marginRight="@dimen/std_padding"
+        android:background="@color/button_color"
+        android:textColor="@android:color/white"
+        android:text="Load"
+    />
+
+
+</LinearLayout>

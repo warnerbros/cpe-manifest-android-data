@@ -18,7 +18,7 @@ public class CastGroup {
 		if (!StringHelper.isEmpty(groupTitle))
 			return groupTitle;
 		if (!castsList.isEmpty()){
-			groupTitle = CPEDataParser.getMovieMetaData().peopleIdToTalentGroupNameMap.get(castsList.get(0).getOtherPeopleId());
+			groupTitle = CPEDataParser.getCPEData().peopleIdToTalentGroupNameMap.get(castsList.get(0).getOtherPeopleId());
 		}
 
 		if (StringHelper.isEmpty(groupTitle)){

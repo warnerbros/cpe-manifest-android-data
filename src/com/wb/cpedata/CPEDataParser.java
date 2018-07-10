@@ -1,24 +1,17 @@
 package com.wb.cpedata;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.SystemClock;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.security.ProviderInstaller;
-import com.wb.cpedata.data.manifest.MovieMetaData;
+import com.wb.cpedata.data.manifest.CPEData;
 import com.wb.cpedata.network.BaselineApiDAO;
 import com.wb.cpedata.network.NGECacheManager;
 import com.wb.cpedata.network.TheTakeApiDAO;
 import com.wb.cpedata.parser.ManifestXMLParser;
 import com.wb.cpedata.util.utils.CPEDataParserLogger;
 import com.wb.cpedata.util.utils.F;
-import com.wb.cpedata.util.utils.StringHelper;
 
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -32,7 +25,7 @@ public class CPEDataParser {
     private static ManifestItem manifestItem = null;
     private static String studioXAPIKey = null;
     private static Context applicationContext = null;
-    private static MovieMetaData movieMetaData = null;
+    private static CPEData movieMetaData = null;
 
 	private static String sUserAgent;
 
@@ -40,7 +33,7 @@ public class CPEDataParser {
         return studioXAPIKey;
     }
 
-    public static MovieMetaData parseCPEManifests(Context applicationContext, ManifestItem manifestItem, Locale locale) {
+    public static CPEData parseCPEManifests(Context applicationContext, ManifestItem manifestItem, Locale locale) {
 		try{
 			CPEDataParser.applicationContext = applicationContext;
 			sCacheManager = new NGECacheManager(applicationContext);
@@ -54,16 +47,18 @@ public class CPEDataParser {
 			CPEDataParserLogger.d("TIME_THIS", "Time to finish parsing: " + currentTime);
 
 			// TODO error handling if manifest is null
-			movieMetaData = MovieMetaData.process(manifest);
-
-
-			currentTime = SystemClock.uptimeMillis() - currentTime - systime;
-			CPEDataParserLogger.d("TIME_THIS", "Time to finish processing: " + currentTime);
+			movieMetaData = CPEData.process(manifest);
 
 			BaselineApiDAO.init();
             BaselineApiDAO.getCastActorsImages(movieMetaData.getAllCastsList(), null);
 
 			TheTakeApiDAO.init();
+
+			currentTime = SystemClock.uptimeMillis() - currentTime - systime;
+			CPEDataParserLogger.d("TIME_THIS", "Time to finish processing: " + currentTime);
+
+			movieMetaData.setTotalLoadTime(currentTime);
+
 			return movieMetaData;
 		}catch (Exception ex){
 			CPEDataParserLogger.e(F.TAG, ex.getLocalizedMessage());
@@ -72,7 +67,7 @@ public class CPEDataParser {
 		}
     }
 
-    public static MovieMetaData getMovieMetaData(){
+    public static CPEData getCPEData(){
     	return movieMetaData;
 	}
 

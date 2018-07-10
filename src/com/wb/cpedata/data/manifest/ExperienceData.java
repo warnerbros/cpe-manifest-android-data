@@ -1,7 +1,6 @@
 package com.wb.cpedata.data.manifest;
 
 import com.wb.cpedata.data.style.ExperienceStyle;
-import com.wb.cpedata.data.style.StyleData;
 import com.wb.cpedata.parser.manifest.schema.v1_4.ExperienceChildType;
 import com.wb.cpedata.parser.manifest.schema.v1_4.ExperienceType;
 import com.wb.cpedata.parser.manifest.schema.v1_4.InventoryMetadataType;
@@ -16,7 +15,7 @@ public class ExperienceData {
 	final public String title;
 	protected String posterImgUrl;
 	//final public String ecVideoUrl;
-	protected MovieMetaData.ECGroupType type = MovieMetaData.ECGroupType.UNKNOWN;
+	protected CPEData.ECGroupType type = CPEData.ECGroupType.UNKNOWN;
 	final protected List<ExperienceData> childrenExperience = new ArrayList<ExperienceData>();
 	final public List<ECGalleryItem> galleryItems = new ArrayList<ECGalleryItem>();
 	final public List<AudioVisualItem> audioVisualItems = new ArrayList<AudioVisualItem>();
@@ -117,20 +116,20 @@ public class ExperienceData {
 		return externalApp;
 	}
 
-	public MovieMetaData.ECGroupType getECGroupType(){
-		if (type == MovieMetaData.ECGroupType.UNKNOWN ){
+	public CPEData.ECGroupType getECGroupType(){
+		if (type == CPEData.ECGroupType.UNKNOWN ){
 			if (galleryItems.size() > 0)
-				type = MovieMetaData.ECGroupType.GALLERY;
+				type = CPEData.ECGroupType.GALLERY;
 			else if (audioVisualItems.size() > 0)
-				type = MovieMetaData.ECGroupType.FEATURETTES;
+				type = CPEData.ECGroupType.FEATURETTES;
 			else if (locationItems.size() > 0)
-				type = MovieMetaData.ECGroupType.LOCATIONS;
+				type = CPEData.ECGroupType.LOCATIONS;
 			else if (shopItems.size() > 0)
-				type = MovieMetaData.ECGroupType.SHOP;
+				type = CPEData.ECGroupType.SHOP;
 			else if (interactiveItems.size() > 0)
-				type = MovieMetaData.ECGroupType.INTERACTIVE;
+				type = CPEData.ECGroupType.INTERACTIVE;
 			else if (externalApp != null)
-				type = MovieMetaData.ECGroupType.EXTERNAL_APP;
+				type = CPEData.ECGroupType.EXTERNAL_APP;
 			else if (childrenExperience.size() > 0)
 				type = childrenExperience.get(0).getECGroupType();
 
@@ -221,7 +220,7 @@ public class ExperienceData {
 	}
 
 	public boolean isShareClip() {
-		return experienceId != null && experienceId.contains(MovieMetaData.SHARE_CLIP_KEY);
+		return experienceId != null && experienceId.contains(CPEData.SHARE_CLIP_KEY);
 	}
 
 	@Override
